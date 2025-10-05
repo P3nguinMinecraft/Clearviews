@@ -31,42 +31,42 @@ public class ClearviewClient implements ClientModInitializer {
 		MidnightConfig.init("clearview", ClearviewConfig.class);
 
 		darkness = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.darkness",
+				"key.clearview.darkness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
 		);
 
 		blindness = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.blindness",
+				"key.clearview.blindness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
 		);
 
 		nausea = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.nausea",
+				"key.clearview.nausea",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
 		);
 
 		fog = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.fog",
+				"key.clearview.fog",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
 		);
 
 		spyglass = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.spyglass",
+				"key.clearview.spyglass",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
 		);
 
 		portal = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.bikerboys.clearview.portal",
+				"key.clearview.portal",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
 				CATEGORY)
