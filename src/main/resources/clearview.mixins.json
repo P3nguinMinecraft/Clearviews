@@ -1,11 +1,13 @@
 {
   "required": true,
-  "package": "bikerboys.clearview.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "ExampleMixin"
+  "package": "bikerboys.clearview.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "FogRendererMixin",
+    "InGameHudMixin",
+    "FogMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

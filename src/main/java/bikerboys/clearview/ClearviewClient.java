@@ -10,11 +10,13 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
-
-
-import static net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ClearviewClient implements ClientModInitializer {
+	public static final String MOD_ID = "clearview";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
 	private static KeyBinding fog;
 	private static KeyBinding portal;
 	private static KeyBinding spyglass;
@@ -22,57 +24,53 @@ public class ClearviewClient implements ClientModInitializer {
 	private static KeyBinding blindness;
 	private static KeyBinding nausea;
 
-	public static final String MOD_ID = "clearview";
-
 	@Override
 	public void onInitializeClient() {
-		// Register a client tick event listener
-
+		MidnightConfig.init("clearview", ClearviewConfig.class);
 
 		darkness = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.darkness",
+				"key.bikerboys.clearview.darkness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
 		blindness = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.blindness",
+				"key.bikerboys.clearview.blindness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
 		nausea = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.nausea",
+				"key.bikerboys.clearview.nausea",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
 		fog = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.fog",
+				"key.bikerboys.clearview.fog",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
 		spyglass = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.spyglass",
+				"key.bikerboys.clearview.spyglass",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
 		portal = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.clearview.portal",
+				"key.bikerboys.clearview.portal",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.clearview")
+				"key.category.bikerboys.clearview")
 		);
 
-
-		END_CLIENT_TICK.register(minecraftClient -> {
+		ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
 			if (minecraftClient.player != null) {
 				StatusEffectInstance darknessEffect = minecraftClient.player.getStatusEffect(StatusEffects.DARKNESS);
 				StatusEffectInstance blindnessEffect = minecraftClient.player.getStatusEffect(StatusEffects.BLINDNESS);
@@ -119,13 +117,7 @@ public class ClearviewClient implements ClientModInitializer {
 					ClearviewConfig.write(MOD_ID);
 					minecraftClient.player.sendMessage(Text.of("Remove spyglass border is now " + ClearviewConfig.RemoveSpyglassBorder), true);
 				}
-
-
 			}
-
 		});
-
 	}
-
-
 }

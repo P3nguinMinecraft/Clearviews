@@ -16,24 +16,17 @@
 	"icon": "assets/clearview/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"bikerboys.clearview.Clearview"
-		],
 		"client": [
 			"bikerboys.clearview.ClearviewClient"
 		]
 	},
 	"mixins": [
-		"clearview.mixins.json",
-		{
-			"config": "clearview.client.mixins.json",
-			"environment": "client"
-		}
+		"clearview.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.7",
-		"minecraft": ["1.21.7"],
-		"java": ">=17",
+		"fabricloader": ">=0.17.2",
+		"minecraft": ">=1.21.9",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
