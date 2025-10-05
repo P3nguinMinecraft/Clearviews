@@ -25,7 +25,7 @@
   "clearview.midnightconfig.PortalOverlayDisabled": "Portal overlay disabled?",
   "clearview.midnightconfig.PortalOverlayDisabled.tooltip": "If yes means that there wont be an nether portal overlay.",
 
-  "key.category.clearview": "Clearview",
+  "key.category.minecraft.clearview": "Clearview",
   "key.clearview.nausea": "Nausea",
   "key.clearview.darkness": "Darkness",
   "key.clearview.blindness": "Blindness",

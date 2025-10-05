@@ -9,6 +9,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +17,9 @@ import org.slf4j.LoggerFactory;
 public class ClearviewClient implements ClientModInitializer {
 	public static final String MOD_ID = "clearview";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final KeyBinding.Category CATEGORY = new KeyBinding.Category(Identifier.of("clearview"));
 
-	private static KeyBinding fog;
+    private static KeyBinding fog;
 	private static KeyBinding portal;
 	private static KeyBinding spyglass;
 	private static KeyBinding darkness;
@@ -32,42 +34,42 @@ public class ClearviewClient implements ClientModInitializer {
 				"key.bikerboys.clearview.darkness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		blindness = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.bikerboys.clearview.blindness",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		nausea = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.bikerboys.clearview.nausea",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		fog = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.bikerboys.clearview.fog",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		spyglass = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.bikerboys.clearview.spyglass",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		portal = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.bikerboys.clearview.portal",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_UNKNOWN,
-				"key.category.bikerboys.clearview")
+				CATEGORY)
 		);
 
 		ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
